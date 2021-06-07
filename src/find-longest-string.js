@@ -1,22 +1,22 @@
 "use strict";
 
 /**
- * Find the longest string in an array.
+ * Find the shortest string in an array.
  * In the case of a tie, returns the earlier string in the array.
  *
  * @param {string[]} stringArr - array of strings
- * @returns {string} - the longest string
+ * @returns {string} - the shortest string
  */
-function findLongestString(stringArr) {
-  let longestString = stringArr[0];
+function findShortestString(stringArr) {
+  let shortestString = stringArr[0];
   for (let str of stringArr) {
-    if (str.length > longestString.length) {
-      longestString = str;
+    if (str.length < shortestString.length) {
+      shortestString = str;
     }
   }
-  return longestString;
+  return shortestString.length;
 }
 
-console.log(findLongestString(["it", "is", "a", "nice", "day"]), "nice");
-console.log(findLongestString(["why", "hello", "to", "you"]), "hello");
-console.log(findLongestString(["brave", "dance"]), "brave");
+console.log(findShortestString(["it", "is", "a", "nice", "day"]), "a");
+console.log(findShortestString(["why", "hello", "to", "you"]), "to");
+console.log(findShortestString(["brave", "dance"]), "brave");
